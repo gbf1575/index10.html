@@ -258,7 +258,7 @@ header {
     </div>
 
     <script>
-        const cartItems = [];
+         const cartItems = [];
         let totalPrice = 0;
 
         function addToCart(productName, price) {
@@ -305,7 +305,66 @@ header {
             // Implement the logic for buying items, e.g., redirect to a payment page
             alert('Items successfully purchased!');
         }
-        
+    const cartitems = [];
+    let totalprice = 0;
+
+    function addToCart(productName, price) {
+        cartItems.push({ name: productName, price: price });
+        totalPrice += price;
+
+        updateCartDisplay();
+    }
+
+    function removeFromCart(productName) {
+        const itemIndex = cartItems.findIndex(item => item.name === productName);
+
+        if (itemIndex !== -1) {
+            totalPrice -= cartItems[itemIndex].price;
+            cartItems.splice(itemIndex, 1);
+
+            updateCartDisplay();
+        }
+    }
+
+    function updateCartDisplay() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalContainer = document.getElementById('total-price');
+        const buyBtn = document.getElementById('buy-btn');
+
+        cartItemsContainer.innerHTML = '';
+        totalContainer.innerHTML = '';
+
+        if (cartItems.length === 0) {
+            const emptyCartMessage = document.createElement('div');
+            emptyCartMessage.textContent = 'Your shopping cart is empty.';
+            cartItemsContainer.appendChild(emptyCartMessage);
+            buyBtn.disabled = true; // Disable the buy button if the cart is empty
+        } else {
+            cartItems.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.textContent = `${item.name}: $${item.price.toFixed(2)}`;
+                cartItemsContainer.appendChild(itemDiv);
+            });
+
+            totalContainer.textContent = `Total: $${totalPrice.toFixed(2)}`;
+            buyBtn.disabled = false; // Enable the buy button if there are items in the cart
+        }
+    }
+
+    function clearCart() {
+        cartItems.length = 0;
+        totalPrice = 0;
+        updateCartDisplay();
+    }
+
+    function buyItems() {
+        if (cartItems.length === 0) {
+            alert('Failed: Your shopping cart is empty.');
+        } else {
+            // Implement the logic for buying items, e.g., redirect to a payment page
+            alert('Items successfully purchased!');
+        }
+    }
     </script>
 
 </body>
