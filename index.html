@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewell_rry</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/gbf1575/index10html/main/jewel.png">
+    <title>Responsive Header</title>
     <style>
         /* Your existing styles here */
         /* ... */
@@ -118,7 +117,7 @@
             color: #fff;
             padding: 15px 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content:space-around;
             align-items: center;
         }
 
@@ -148,6 +147,8 @@
             header {
                 flex-direction: column; /* Stack items vertically */
                 align-items: center; /* Align items to the center */
+                position: fixed;
+                padding: 10px 39px;
             }
 
             #logo {
@@ -162,6 +163,9 @@
                 display: block; /* Display links as block elements (stacked) */
                 margin-bottom: 10px; /* Add space between links */
             }
+            .container{
+                padding: 140px 0px;
+            }
         }
 
     </style>
@@ -169,19 +173,18 @@
 <body>
 
     <header>
-        <div id="logo"><img src= "https://raw.githubusercontent.com/gbf1575/index10html/main/Img%20jewel/jewel.png" alt="jewell-logo"></div>
+        <div id="logo"><img src="jewel.png" alt="jewell_logo"></div>
         <nav>
-            <a href="#">Home</a>
+            <a href="#Home">Home</a>
             <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <a href="#">Add-to-cart</a>
         </nav>
     </header>
 
-<div class="container">
+<div class="container " id="Home">
     <div class="line-1">
         <div class="bag">
-            <img src="https://raw.githubusercontent.com/gbf1575/index10html/main/Img%20jewel/Screenshot_20240105-210213_Instagram.jpg" alt="Ohana">
+            <img src="Img jewel/Screenshot_20240105-210213_Instagram.jpg" alt="Ohana">
             <div class="product-info">Ohana</div>
             <div class="btn-container">
                 <button class="add-to-cart-btn" type="button" onclick="addToCart('Ohana', 49.99)">Add to Cart</button>
@@ -190,7 +193,7 @@
         </div>
 
         <div class="bag">
-            <img src="https://raw.githubusercontent.com/gbf1575/index10html/main/Img%20jewel/Screenshot_20240105-210310_Instagram.jpg" alt="Maple">
+            <img src="img jewel/Screenshot_20240105-210310_Instagram.jpg" alt="Maple">
             <div class="product-info">Maple🍁</div>
             <div class="btn-container">
                 <button class="add-to-cart-btn" type="button" onclick="addToCart('Maple', 39.99)">Add to Cart</button>
@@ -199,7 +202,7 @@
         </div>
 
         <div class="bag">
-            <img src="https://raw.githubusercontent.com/gbf1575/index10html/main/Img%20jewel/Screenshot_20240105-210328_Instagram.jpg" alt="Bejeweled">
+            <img src="img jewel/Screenshot_20240105-210328_Instagram.jpg" alt="Bejeweled">
             <div class="product-info">Bejeweled</div>
             <div class="btn-container">
                 <button class="add-to-cart-btn" type="button" onclick="addToCart('Bejeweled', 59.99)">Add to Cart</button>
