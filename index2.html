@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <style>
+        /* Your existing styles here */
+        /* ... */
+
+        .container {
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .line-1 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .bag {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .bag img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-info {
+            font-size: large;
+            font-family: sans-serif;
+            font-weight: bolder;
+            margin-bottom: 10px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .add-to-cart-btn,
+        .remove-from-cart-btn {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .add-to-cart-btn {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #45a049;
+        }
+
+        .remove-from-cart-btn {
+            background-color: #f44336;
+            color: #fff;
+        }
+
+        .remove-from-cart-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        #cart {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        #cart h2 {
+            margin-bottom: 10px;
+        }
+
+        #cart-items {
+            margin-top: 10px;
+        }
+
+        #total-price {
+            font-size: larger;
+            margin-top: 10px;
+        }
+        #clear-cart-btn{
+            background-color: #d32f2f;
+            color: white;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 2rem;
+        }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo img {
+            width: 50px; /* Adjust the size as needed */
+            border-radius: 50%;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff9900; /* Change color on hover */
+        }
+
+        /* Media Query for screens with a maximum width of 767px (typical for mobile devices) */
+        @media (max-width: 767px) {
+            header {
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Align items to the center */
+            }
+
+            #logo {
+                margin-bottom: 10px; /* Add space between logo and navigation links */
+            }
+
+            nav {
+                margin-top: 10px; /* Add space between logo and navigation links */
+            }
+
+            nav a {
+                display: block; /* Display links as block elements (stacked) */
+                margin-bottom: 10px; /* Add space between links */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo"><img src="jewel.png" alt="jewell_logo"></div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+<div class="container">
+    <div class="line-1">
+        <div class="bag">
+            <img src="Img jewel/Screenshot_20240105-210213_Instagram.jpg" alt="Ohana">
+            <div class="product-info">Ohana</div>
+            <div class="btn-container">
+                <button class="add-to-cart-btn" type="button" onclick="addToCart('Ohana', 49.99)">Add to Cart</button>
+                <button class="remove-from-cart-btn" type="button" onclick="removeFromCart('Ohana')">Remove</button>
+            </div>
+        </div>
+
+        <div class="bag">
+            <img src="img jewel/Screenshot_20240105-210310_Instagram.jpg" alt="Maple">
+            <div class="product-info">Maple🍁</div>
+            <div class="btn-container">
+                <button class="add-to-cart-btn" type="button" onclick="addToCart('Maple', 39.99)">Add to Cart</button>
+                <button class="remove-from-cart-btn" type="button" onclick="removeFromCart('Maple')">Remove</button>
+            </div>
+        </div>
+
+        <div class="bag">
+            <img src="img jewel/Screenshot_20240105-210328_Instagram.jpg" alt="Bejeweled">
+            <div class="product-info">Bejeweled</div>
+            <div class="btn-container">
+                <button class="add-to-cart-btn" type="button" onclick="addToCart('Bejeweled', 59.99)">Add to Cart</button>
+                <button class="remove-from-cart-btn" type="button" onclick="removeFromCart('Bejeweled')">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="cart">
+    <h2>Shopping Cart</h2>
+    <div id="cart-items"></div>
+    <div id="total-price"></div>
+    <footer>
+        <button id="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+    </footer>
+</div>
+
+
+<script>
+    const cartItems = [];
+    let totalPrice = 0;
+
+    function addToCart(productName, price) {
+        cartItems.push({ name: productName, price: price });
+        totalPrice += price;
+
+        updateCartDisplay();
+    }
+
+    function removeFromCart(productName) {
+        const itemIndex = cartItems.findIndex(item => item.name === productName);
+
+        if (itemIndex !== -1) {
+            totalPrice -= cartItems[itemIndex].price;
+            cartItems.splice(itemIndex, 1);
+
+            updateCartDisplay();
+        }
+    }
+
+    function updateCartDisplay() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalContainer = document.getElementById('total-price');
+
+        cartItemsContainer.innerHTML = '';
+        totalContainer.innerHTML = '';
+
+        cartItems.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.textContent = `${item.name}: $${item.price.toFixed(2)}`;
+            cartItemsContainer.appendChild(itemDiv);
+        });
+
+        totalContainer.textContent = `Total: $${totalPrice.toFixed(2)}`;
+    }
+    function clearCart() {
+        cartItems.length = 0;
+        totalPrice = 0;
+        updateCartDisplay();}
+</script>
+
+</body>
+</html>
