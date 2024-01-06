@@ -9,12 +9,6 @@
         /* Your existing styles here */
         /* ... */
 
-        .container {
-            padding: 20px;
-            background-color: #f5f5f5;
-            border-radius: 10px;
-            margin: 20px;
-        }
 
         .line-1 {
             display: flex;
@@ -30,11 +24,11 @@
             padding: 15px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            margin-bottom: 2px;
         }
 
         .bag img {
-            width: 100%;
+            width: 25%;
             border-radius: 10px;
             margin-bottom: 15px;
         }
@@ -125,14 +119,6 @@
             font-family: 'Arial', sans-serif;
         }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
 
         #logo img {
             width: 50px;
@@ -158,40 +144,64 @@
         }
 
         /* Media Query for screens with a maximum width of 767px (typical for mobile devices) */
-        @media (max-width: 767px) {
-            header {
-                flex-direction: column;
-                /* Stack items vertically */
-                align-items: center;
-                /* Align items to the center */
-                position: fixed;
-                padding: 10px 20px;
-                width: 100%;
-                top: 0;
-                z-index: 1000;
-            }
+        /* Your existing styles here */
+/* ... */
 
-            #logo {
-                margin-bottom: 10px;
-                /* Add space between logo and navigation links */
-            }
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 0;
+    position: fixed; /* Add this property to make the header fixed */
+    width: 100%; /* Ensure the header spans the full width of the viewport */
+    z-index: 1000;
+}
 
-            nav {
-                margin-top: 10px;
-                /* Add space between logo and navigation links */
-            }
+/* Adjust margin for the container to prevent content from being hidden behind the fixed header */
+.container {
+    padding: 140px 20px 20px; /* Adjust the top padding to create space for the fixed header */
+}
 
-            nav a {
-                display: block;
-                /* Display links as block elements (stacked) */
-                margin-bottom: 10px;
-                /* Add space between links */
-            }
+/* Media Query for screens with a maximum width of 767px (typical for mobile devices) */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Align items to the center */
+        padding: 10px 20px;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
 
-            .container {
-                padding: 140px 0px;
-            }
-        }
+    #logo {
+        margin-bottom: 10px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        padding: 140px 0px 20px; 
+
+    .bag img {
+        width: 55%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+}}
+
+        
     </style>
 </head>
 
@@ -209,8 +219,8 @@
     <div class="container" id="Home">
         <div class="line-1">
             <div class="bag">
-                <img src="https://raw.githubusercontent.com/gbf1575/index10html/main/Img%20jewel/Screenshot_20240105-210213_Instagram.jpg" alt="Ohana">
-                <div class="product-info">Ohana</div>
+                <img src="Img jewel/Screenshot_20240105-210213_Instagram.jpg" alt="Ohana">
+                <div class="product-info">Ohana 49.99$</div>
                 <div class="btn-container">
                     <button class="add-to-cart-btn" type="button" onclick="addToCart('Ohana', 49.99)">Add to Cart</button>
                     <button class="remove-from-cart-btn" type="button" onclick="removeFromCart('Ohana')">Remove</button>
@@ -218,8 +228,8 @@
             </div>
 
             <div class="bag">
-                <img src="https://raw.githubusercontent.com/gbf1575/index10html/main/Img%20jewel/Screenshot_20240105-210310_Instagram.jpg" alt="Maple">
-                <div class="product-info">Maple🍁</div>
+                <img src="img jewel/Screenshot_20240105-210310_Instagram.jpg" alt="Maple">
+                <div class="product-info">Maple🍁 39.99$</div>
                 <div class="btn-container">
                     <button class="add-to-cart-btn" type="button" onclick="addToCart('Maple', 39.99)">Add to Cart</button>
                     <button class="remove-from-cart-btn" type="button" onclick="removeFromCart('Maple')">Remove</button>
@@ -227,8 +237,8 @@
             </div>
 
             <div class="bag">
-                <img src="https://raw.githubusercontent.com/gbf1575/index10html/main/Img%20jewel/Screenshot_20240105-210328_Instagram.jpg" alt="Bejeweled">
-                <div class="product-info">Bejeweled</div>
+                <img src="img jewel/Screenshot_20240105-210328_Instagram.jpg" alt="Bejeweled">
+                <div class="product-info">Bejeweled 59.99$</div>
                 <div class="btn-container">
                     <button class="add-to-cart-btn" type="button" onclick="addToCart('Bejeweled', 59.99)">Add to Cart</button>
                     <button class="remove-from-cart-btn" type="button" onclick="removeFromCart('Bejeweled')">Remove</button>
@@ -295,6 +305,7 @@
             // Implement the logic for buying items, e.g., redirect to a payment page
             alert('Items successfully purchased!');
         }
+        
     </script>
 
 </body>
